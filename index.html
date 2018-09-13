@@ -22,30 +22,46 @@ state = {
     age: 35
 }
 //FUCNTIONS
-handleClick = (e) => {console.log(this.state.name), this.setState({
-    name:'Yoshi'
-})}
-handleMouseOver=(e) => {console.log(e.target,e.pageX);}
-handleCopy=(e) => {console.log('try to  be original')}
+
+
+handleChange =(e)=>{
+    this.setState({
+        name:e.target.value
+    })
+}
+handleSubmit=(e)=>{
+    e.preventDefault()
+    console.log("form submtted", this.state.name)
+}
 
 
 // RENDERING OUR COMPONENT
-            render() {
-                return (
-                    <div className="app-content">
-<h1>Hi My Name is... WHat? Hi My Name is... WHat? chiiki chiki {this.state.name} </h1>
+//             render() {
+//                 return (
+//                     <div className="app-content">
+// <h1>Hi My Name is... WHat? Hi My Name is... WHat? chiiki chiki {this.state.name} </h1>
 
-<button onClick = {this.handleClick}>click Me</button>
+// <button onClick = {this.handleClick}>click Me</button>
 
-<button onMouseOver = {this.handleMouseOver}>hover Me</button>
+// <button onMouseOver = {this.handleMouseOver}>hover Me</button>
 
-<p onCopy={this.handleCopy}> heaght thats my name</p>
+// <p onCopy={this.handleCopy}> heaght thats my name</p>
 
-                        <h1>Hey My Dude</h1>
+//                         <h1>Hey My Dude</h1>
                        
-                    </div>
-                )
-            }
+//                     </div>
+//                 )
+//             }
+
+render(){
+    return <div className= "app-content">
+        <h1> Myname is {this.state.name}</h1>
+<form onSubmit={this.handleSubmit}>
+    <input type = "text" onChange={this.handleChange}/>
+    <button>summit</button>
+</form>
+            </div>
+}
         }
         ReactDOM.render(<App />, document.getElementById('app'))
     </script>
