@@ -14,26 +14,31 @@
     <div id="app"></div>
 
     <script type="text/babel">
+
         class App extends React.Component {
+            //States
 state = {
     name : 'Ryu',
     age: 35
 }
-handleClick(e){
-console.log(this.state.name)
-}
-handleMouseOver(e){
-console.log(e.target,e.pageX);
-}
-handleCopy(e){
-    console.log('try to  be original')
-}
+//FUCNTIONS
+handleClick = (e) => {console.log(this.state.name), this.setState({
+    name:'Yoshi'
+})}
+handleMouseOver=(e) => {console.log(e.target,e.pageX);}
+handleCopy=(e) => {console.log('try to  be original')}
+
+
+// RENDERING OUR COMPONENT
             render() {
                 return (
                     <div className="app-content">
 <h1>Hi My Name is... WHat? Hi My Name is... WHat? chiiki chiki {this.state.name} </h1>
+
 <button onClick = {this.handleClick}>click Me</button>
+
 <button onMouseOver = {this.handleMouseOver}>hover Me</button>
+
 <p onCopy={this.handleCopy}> heaght thats my name</p>
 
                         <h1>Hey My Dude</h1>
