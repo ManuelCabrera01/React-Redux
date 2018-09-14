@@ -3,14 +3,18 @@ import React, { Component } from "react";
 class ChildComponent extends Component {
   render() {
     // console.log(this.props);
-    const { name, age } = this.props;
-    return (
-      <div className="ninjas">
-        <h2>My first ChildComponent component</h2>
-        <p>Name : {name}</p>
-        <p>age: {age}</p>
-      </div>
-    );
+    const { clients } = this.props;
+    const clientList = clients.map(client => {
+      return (
+        <div className="ninjas" key={client.id}>
+          <p>name: {client.name}</p>
+          <p>age: {client.age}</p>
+
+          <br />
+        </div>
+      );
+    });
+    return <div className="client-list">{clientList}</div>;
   }
 }
 
