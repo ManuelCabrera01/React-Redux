@@ -10,6 +10,7 @@ class App extends Component {
     ]
   };
   render() {
+    const {} = this.props;
     return (
       <div className="App">
         <h1>My Dude</h1>
