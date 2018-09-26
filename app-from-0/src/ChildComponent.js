@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 const ChildComponent = props => {
-  const { clients } = props;
+  const { clients, deleteClient } = props;
   // const clientList = clients.map(client => {
   //   if (client.age > 30) {
   //     return (
@@ -22,6 +22,13 @@ const ChildComponent = props => {
         <p>name: {client.name}</p>
         <p>age: {client.age}</p>
         <br />
+        <button
+          onClick={() => {
+            deleteClient(client.id);
+          }}
+        >
+          delete Client
+        </button>
         <hr />
       </div>
     ) : null;

@@ -9,14 +9,38 @@ class App extends Component {
       { name: "Alexandra", age: 54, id: 3 }
     ]
   };
+  // ADD NEW CLIENT TO THE ARRAY
+  addClientFun = client => {
+    // created an id for the nuw client
+    client.id = Math.random();
+    // create an identical copy of the clientArray and we add the new client
+    let clients = [...this.state.clients, client];
+    // and then we set de state
+    this.setState({
+      clients: clients
+    });
+  };
+  // END OF ADD NEW CLIENT TO THE ARRAY
+
+  deleteClient = id => {
+    let clients = this.state.clients.filter(client => {
+      return client.id !== id;
+    });
+    this.setState({
+      clients: clients
+    });
+  };
   render() {
     const {} = this.props;
     return (
       <div className="App">
         <h1>My Dude</h1>
         <p>hello</p>
-        <ChildComponent clients={this.state.clients} />
-        <AddClient />
+        <ChildComponent
+          deleteClient={this.deleteClient}
+          clients={this.state.clients}
+        />
+        <AddClient addClientFun={this.addClientFun} />
       </div>
     );
   }

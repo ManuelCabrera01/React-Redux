@@ -4,8 +4,7 @@ class AddClient extends Component {
   state = {
     //create empty elements in the state  to recive the information from the form
     name: null,
-    age: null,
-    id: null
+    age: null
   };
   //select the id and the value from the form
   handleChange = e => {
@@ -13,7 +12,9 @@ class AddClient extends Component {
   };
   //summit the form
   handleSumit = e => {
-    e.preventDefault(console.log(this.state));
+    e.preventDefault();
+    // we get add client form the main app and we send the state back
+    this.props.addClientFun(this.state);
   };
   render() {
     return (
@@ -23,8 +24,6 @@ class AddClient extends Component {
           <input type="text" id="name" onChange={this.handleChange} />
           <label htmlFor="age">age</label>
           <input type="text" id="age" onChange={this.handleChange} />
-          <label htmlFor="id">id</label>
-          <input type="text" id="id" namee="id" onChange={this.handleChange} />
           <button>summit</button>
         </form>
       </div>
