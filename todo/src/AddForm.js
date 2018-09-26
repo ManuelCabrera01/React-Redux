@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 class AddTodo extends Component {
   state = {
-    constent: ""
+    content: ""
   };
   handleChange = e => {
     this.setState({
@@ -10,8 +10,9 @@ class AddTodo extends Component {
     });
   };
   handleSubmit = e => {
-    e.preventDeafault();
+    e.preventDefault();
     console.log(this.state);
+    this.props.addTodo(this.state);
   };
   render() {
     return (
