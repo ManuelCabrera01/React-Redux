@@ -30,6 +30,7 @@ class App extends Component {
       clients: clients
     });
   };
+
   render() {
     const {} = this.props;
     return (

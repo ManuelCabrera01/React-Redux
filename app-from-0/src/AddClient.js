@@ -6,14 +6,14 @@ class AddClient extends Component {
     name: null,
     age: null
   };
-  //select the id and the value from the form
+  //select the id and the value from the form which is going to match with the elemets in the state
   handleChange = e => {
-    this.setState({ [e.target.id]: e.target.value });
+    this.setState({ [e.target.id]: [e.target.value] });
   };
   //summit the form
   handleSumit = e => {
     e.preventDefault();
-    // we get add client form the main app and we send the state back
+    // we get addclient function  from the App.js  component and we send the state back
     this.props.addClientFun(this.state);
   };
   render() {
