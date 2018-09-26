@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ChildComponent from "./ChildComponent";
-
+import AddClient from "./AddClient";
 class App extends Component {
   state = {
     clients: [
@@ -16,6 +16,7 @@ class App extends Component {
         <h1>My Dude</h1>
         <p>hello</p>
         <ChildComponent clients={this.state.clients} />
+        <AddClient />
       </div>
     );
   }
