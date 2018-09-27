@@ -1,4 +1,5 @@
 import React from "react";
+import { Link, NavLink } from "react-router-dom";
 const Navbar = () => {
   return (
     <nav className="nav wrapper red darken-3">
@@ -6,13 +7,13 @@ const Navbar = () => {
         <a className="brand-logo">All about Router</a>
         <ul className="right">
           <li>
-            <a href="/home">Home</a>
+            <NavLink to="/">Home</NavLink>
           </li>
           <li>
-            <a href="/about">About</a>
+            <NavLink to="/about">About</NavLink>
           </li>
           <li>
-            <a href="/contact">Contact</a>
+            <Link to="/contact">Contact</Link>
           </li>
         </ul>
       </div>
