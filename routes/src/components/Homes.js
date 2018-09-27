@@ -5,17 +5,18 @@ class Home extends Component {
   state = {
     posts: []
   };
+
   componentDidMount() {
     axios
       .get("https://jsonplaceholder.typicode.com/todos/1/posts")
       .then(res => {
-        this.setState = {
+        this.setState({
           posts: res.data.slice(0, 10)
-        };
+        });
       });
   }
+
   render() {
-    console.log(this.state);
     const { posts } = this.state;
     const postList = posts.length ? (
       posts.map(post => {
