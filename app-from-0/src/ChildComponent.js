@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./clienst.css";
 
 const ChildComponent = props => {
   const { clients, deleteClient } = props;
@@ -18,7 +19,7 @@ const ChildComponent = props => {
   // });
   const clientsList = clients.map(client => {
     return client.age > 20 ? (
-      <div className="ninjas" key={client.id}>
+      <div className="clients" key={client.id}>
         <p>name: {client.name}</p>
         <p>age: {client.age}</p>
         <br />

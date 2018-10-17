@@ -38,6 +38,7 @@ class App extends Component {
         <h1>My Dude</h1>
         <p>hello</p>
         <ChildComponent
+          //passing the diferent function to recive any update of the props in the ther component so the functions are going to be pass as props, in the child component we updating in the other componet and send then back
           deleteClient={this.deleteClient}
           clients={this.state.clients}
         />
