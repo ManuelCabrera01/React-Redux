@@ -2,7 +2,7 @@ import React from "react";
 const RandomColor = WrapperdComponent => {
   const colors = ["red", "pink", "orange", "blue", "green", "yellow"];
   const randoC = colors[Math.floor(Math.random() * 5)];
-  const className = randoC + " -test";
+  const className = randoC + "-text";
   return props => {
     return (
       <div className={className}>
