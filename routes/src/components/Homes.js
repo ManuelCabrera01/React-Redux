@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import souitCase from "../113-1136589_briefcase-icon-briefcase-emoji.png";
 class Home extends Component {
   state = {
     posts: []
@@ -22,6 +23,7 @@ class Home extends Component {
       posts.map(post => {
         return (
           <div className="post card" key={post.id}>
+            <img className="image" src={souitCase} alt="a suitecase" />
             <div className="card-content">
               <Link to={"/" + post.id}>
                 <span className="card-title">{post.title}</span>
